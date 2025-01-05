@@ -29,7 +29,7 @@
             @{@"title": @"Enable", @"desc": @"EnableShowMyTouches", @"icon": @"power", @"type": @"bool", @"key": @"enable", @"id": @"mainCell"},
             @{@"title": @"OnlyRecording", @"desc": @"OnlyRecordingDesc", @"icon": @"record.circle", @"type": @"bool", @"key": @"recording", @"id": @"mainCell"},
             @{@"title": @"Swipetrajectory", @"desc": @"EnableSwipetrajectory", @"icon": @"hand.draw", @"type": @"bool", @"key": @"Swipetrajectory", @"id": @"mainCell"},
-            @{@"title": @"luminescence", @"desc": @"Enableluminescence", @"icon": @"livephoto", @"type": @"bool", @"key": @"luminescence", @"id": @"mainCell"},
+            @{@"title": @"luminescence", @"desc": @"Enableluminescence", @"icon": @"livephoto", @"type": @"bool", @"key": @"luminescence", @"id": @"mainCell"}
         ];
 
         _color = @[
