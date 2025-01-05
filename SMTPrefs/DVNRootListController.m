@@ -26,8 +26,10 @@
 
     if (self) {
         _main = @[
-            @{@"title": @"Enable", @"icon": @"power", @"type": @"bool", @"key": @"enable", @"id": @"mainCell"},
-            @{@"title": @"OnlyRecording", @"desc": @"OnlyRecordingDesc", @"icon": @"record.circle", @"type": @"bool", @"key": @"recording", @"id": @"mainCell"}
+            @{@"title": @"Enable", @"desc": @"EnableShowMyTouches", @"icon": @"power", @"type": @"bool", @"key": @"enable", @"id": @"mainCell"},
+            @{@"title": @"OnlyRecording", @"desc": @"OnlyRecordingDesc", @"icon": @"record.circle", @"type": @"bool", @"key": @"recording", @"id": @"mainCell"},
+            @{@"title": @"Swipetrajectory", @"desc": @"EnableSwipetrajectory", @"icon": @"hand.draw", @"type": @"bool", @"key": @"Swipetrajectory", @"id": @"mainCell"},
+            @{@"title": @"luminescence", @"desc": @"Enableluminescence", @"icon": @"livephoto", @"type": @"bool", @"key": @"luminescence", @"id": @"mainCell"},
         ];
 
         _color = @[
@@ -59,7 +61,9 @@
             @{@"title": @"Dayanch96", @"desc": @"FollowMe", @"icon": @"dvn", @"type": @"link", @"key": @"https://twitter.com/dayanch96", @"id": @"devCell"},
             @{@"title": @"Github", @"desc": @"SourceCode", @"icon": @"github", @"type": @"link", @"key": @"https://github.com/dayanch96/ShowMyTouches", @"id": @"devCell"},
             @{@"title": @"TipJar", @"desc": @"Donate.PayPal", @"icon": @"paypal", @"type": @"link", @"key": @"https://paypal.me/dayanch96", @"id": @"devCell"},
-            @{@"title": @"Support", @"desc": @"Donate.KoFi", @"icon": @"kofi", @"type": @"link", @"key": @"https://ko-fi.com/dayanch96", @"id": @"devCell"}
+            @{@"title": @"Support", @"desc": @"Donate.KoFi", @"icon": @"kofi", @"type": @"link", @"key": @"https://ko-fi.com/dayanch96", @"id": @"devCell"},
+            @{@"title": @"bygrepo", @"desc": @"jailbreakhelper", @"icon": @"bygrepo", @"type": @"link", @"key": @"https://byg.iosios.net", @"id": @"devCell"},
+            @{@"title": @"jbrepo", @"desc": @"Sini921", @"icon": @"jbrepo", @"type": @"link", @"key": @"https://sini921.github.io", @"id": @"devCell"}
         ];
 
         _sections = @[_main, _color, _duration, _size, _radius, _bwidth, _reset, _developer];
@@ -126,7 +130,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return section == _sections.count - 1 ? @"v1.1.3" : nil;
+    return section == _sections.count - 1 ? @"v1.2.0" : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
