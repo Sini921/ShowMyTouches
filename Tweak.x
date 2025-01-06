@@ -63,9 +63,11 @@ void ClearAllTouchViews() {
                     touchView.userInteractionEnabled = NO;
 
                     if (smtBool(@"luminescence")) {
+                        CGFloat luminescenceRadius = [[SMTUserDefaults standardUserDefaults] floatForKey:@"luminescenceRadius"];  
+
                         touchView.layer.shadowColor = borderColor.CGColor;
-                        touchView.layer.shadowOpacity = 0.8;
-                        touchView.layer.shadowRadius = 8.0;
+                        touchView.layer.shadowOpacity = 1;
+                        touchView.layer.shadowRadius = luminescenceRadius; 
                         touchView.layer.shadowOffset = CGSizeMake(0, 0);
                     }
 
@@ -102,9 +104,11 @@ void ClearAllTouchViews() {
                         trailView.layer.borderWidth = touchView.layer.borderWidth;
 
                         if (smtBool(@"luminescence")) {
+                            CGFloat luminescenceRadius = [[SMTUserDefaults standardUserDefaults] floatForKey:@"luminescenceRadius"];  
+
                             trailView.layer.shadowColor = touchView.layer.borderColor;
-                            trailView.layer.shadowOpacity = 0.8;
-                            trailView.layer.shadowRadius = 8.0;
+                            trailView.layer.shadowOpacity = 1;
+                            trailView.layer.shadowRadius = luminescenceRadius;  
                             trailView.layer.shadowOffset = CGSizeMake(0, 0);
                         }
 

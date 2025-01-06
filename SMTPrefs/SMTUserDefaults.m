@@ -32,6 +32,7 @@ static NSString *const kDefaultsSuiteName = @"com.dvntm.showmytouches";
         @"borderColor": borderColorData,
         @"duration": @0.0,
         @"SwipetrajectoryDuration": @0.5,
+        @"luminescenceRadius": @8.0,
         @"touchSize": @30,
         @"touchRadius": @15,
         @"borderWidth": @1.0

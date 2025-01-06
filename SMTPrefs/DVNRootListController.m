@@ -14,6 +14,7 @@
     NSArray *_color;
     NSArray *_duration;
     NSArray *_SwipetrajectoryDuration;
+    NSArray *_luminescenceRadius;
     NSArray *_size;
     NSArray *_radius;
     NSArray *_bwidth;
@@ -46,6 +47,10 @@
             @{@"type": @"slider", @"min": @0, @"max": @3, @"divider": @0.1, @"key": @"SwipetrajectoryDuration", @"id": @"SwipetrajectoryDurationCell", @"style": @(UITableViewCellStyleValue1)}
         ];
 
+        _luminescenceRadius = @[
+            @{@"type": @"slider", @"min": @0, @"max": @10, @"divider": @0.1, @"key": @"luminescenceRadius", @"id": @"luminescenceRadiusCell", @"style": @(UITableViewCellStyleValue1)}
+        ];
+
         _size = @[
             @{@"type": @"slider", @"min": @20, @"max": @60, @"divider": @1, @"key": @"touchSize", @"id": @"touchSizeCell", @"style": @(UITableViewCellStyleValue1)}
         ];
@@ -71,7 +76,7 @@
             @{@"title": @"jbrepo", @"desc": @"Sini921", @"icon": @"jbrepo", @"type": @"link", @"key": @"https://sini921.github.io", @"id": @"devCell"}
         ];
 
-        _sections = @[_main, _color, _duration, _SwipetrajectoryDuration, _size, _radius, _bwidth, _reset, _developer];
+        _sections = @[_main, _color, _duration, _SwipetrajectoryDuration, _luminescenceRadius, _size, _radius, _bwidth, _reset, _developer];
     }
 
     return self;
@@ -121,6 +126,10 @@
 
     if (section == [_sections indexOfObject:_SwipetrajectoryDuration]) {
         header = @"SwipetrajectoryDuration";
+    }
+
+    if (section == [_sections indexOfObject:_luminescenceRadius]) {
+        header = @"luminescenceRadius";
     }
 
     if (section == [_sections indexOfObject:_size]) {
