@@ -33,6 +33,7 @@ static NSString *const kDefaultsSuiteName = @"com.dvntm.showmytouches";
         @"duration": @0.0,
         @"SwipetrajectoryDuration": @0.5,
         @"luminescenceRadius": @8.0,
+        @"luminescenceOpacity": @0.8,
         @"touchSize": @30,
         @"touchRadius": @15,
         @"borderWidth": @1.0

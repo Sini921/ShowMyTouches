@@ -15,6 +15,7 @@
     NSArray *_duration;
     NSArray *_SwipetrajectoryDuration;
     NSArray *_luminescenceRadius;
+    NSArray *_luminescenceOpacity;
     NSArray *_size;
     NSArray *_radius;
     NSArray *_bwidth;
@@ -51,6 +52,10 @@
             @{@"type": @"slider", @"min": @0, @"max": @10, @"divider": @0.1, @"key": @"luminescenceRadius", @"id": @"luminescenceRadiusCell", @"style": @(UITableViewCellStyleValue1)}
         ];
 
+        _luminescenceOpacity = @[
+            @{@"type": @"slider", @"min": @0, @"max": @1, @"divider": @0.1, @"key": @"luminescenceOpacity", @"id": @"luminescenceOpacityCell", @"style": @(UITableViewCellStyleValue1)}
+        ];
+
         _size = @[
             @{@"type": @"slider", @"min": @20, @"max": @60, @"divider": @1, @"key": @"touchSize", @"id": @"touchSizeCell", @"style": @(UITableViewCellStyleValue1)}
         ];
@@ -73,10 +78,10 @@
             @{@"title": @"TipJar", @"desc": @"Donate.PayPal", @"icon": @"paypal", @"type": @"link", @"key": @"https://paypal.me/dayanch96", @"id": @"devCell"},
             @{@"title": @"Support", @"desc": @"Donate.KoFi", @"icon": @"kofi", @"type": @"link", @"key": @"https://ko-fi.com/dayanch96", @"id": @"devCell"},
             @{@"title": @"bygrepo", @"desc": @"jailbreakhelper", @"icon": @"bygrepo", @"type": @"link", @"key": @"https://byg.iosios.net", @"id": @"devCell"},
-            @{@"title": @"jbrepo", @"desc": @"Sini921", @"icon": @"jbrepo", @"type": @"link", @"key": @"https://sini921.github.io", @"id": @"devCell"}
+            @{@"title": @"jbrepo", @"desc": @"Addtojbrepo", @"icon": @"jbrepo", @"type": @"link", @"key": @"https://sini921.github.io", @"id": @"devCell"}
         ];
 
-        _sections = @[_main, _color, _duration, _SwipetrajectoryDuration, _luminescenceRadius, _size, _radius, _bwidth, _reset, _developer];
+        _sections = @[_main, _color, _duration, _SwipetrajectoryDuration, _luminescenceRadius, _luminescenceOpacity, _size, _radius, _bwidth, _reset, _developer];
     }
 
     return self;
@@ -132,6 +137,10 @@
         header = @"luminescenceRadius";
     }
 
+    if (section == [_sections indexOfObject:_luminescenceOpacity]) {
+        header = @"luminescenceOpacity";
+    }
+
     if (section == [_sections indexOfObject:_size]) {
         header = @"TouchSize";
     }
@@ -148,7 +157,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return section == _sections.count - 1 ? @"v1.2.0" : nil;
+    return section == _sections.count - 1 ? @"Version: 1.2.1 @思念变成海编译" : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

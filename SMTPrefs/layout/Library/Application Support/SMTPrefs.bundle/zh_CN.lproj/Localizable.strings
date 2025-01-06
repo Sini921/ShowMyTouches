@@ -1,4 +1,5 @@
 {
+    Addtojbrepo = "\U6dfb\U52a0\U5b63\U4f2f\U4e4b\U5bb6\U6e90";
     AnimationDuration = "\U89e6\U6478\U52a8\U753b\U6301\U7eed\U65f6\U95f4";
     BorderColor = "\U8fb9\U6846\U989c\U8272";
     BorderWidth = "\U8fb9\U6846\U5bbd\U5ea6";
@@ -13,7 +14,6 @@
     OnlyRecording = "\U4ec5\U5f55\U5c4f\U663e\U793a";
     OnlyRecordingDesc = "\U4ec5\U5728\U5c4f\U5e55\U5f55\U5236\U671f\U95f4\U663e\U793a\U89e6\U6478\U6307\U793a\U5668\U3002";
     ResetSettings = "\U91cd\U7f6e\U8bbe\U7f6e";
-    Sini921 = "@\U601d\U5ff5\U53d8\U6210\U6d77\U7f16\U8bd1";
     SourceCode = "\U6e90\U4ee3\U7801";
     Support = "\U652f\U6301\U6211";
     Swipetrajectory = "\U6ed1\U52a8\U8f68\U8ff9";
@@ -25,5 +25,6 @@
     jailbreakhelper = "\U4f60\U7684\U8d8a\U72f1\U597d\U5e2e\U624b";
     jbrepo = "\U5b63\U4f2f\U4e4b\U5bb6\U6e90";
     luminescence = "\U53d1\U5149\U6548\U679c";
+    luminescenceOpacity = "\U53d1\U5149\U989c\U8272\U900f\U660e\U5ea6";
     luminescenceRadius = "\U53d1\U5149\U534a\U5f84";
 }
