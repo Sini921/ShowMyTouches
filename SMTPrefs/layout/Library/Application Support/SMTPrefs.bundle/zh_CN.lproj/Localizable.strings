@@ -1,5 +1,5 @@
 {
-    AnimationDuration = "\U52a8\U753b\U6301\U7eed\U65f6\U95f4";
+    AnimationDuration = "\U89e6\U6478\U52a8\U753b\U6301\U7eed\U65f6\U95f4";
     BorderColor = "\U8fb9\U6846\U989c\U8272";
     BorderWidth = "\U8fb9\U6846\U5bbd\U5ea6";
     CornerRadius = "\U5706\U89d2\U534a\U5f84";
@@ -17,6 +17,7 @@
     SourceCode = "\U6e90\U4ee3\U7801";
     Support = "\U652f\U6301\U6211";
     Swipetrajectory = "\U6ed1\U52a8\U8f68\U8ff9";
+    SwipetrajectoryDuration = "\U8f68\U8ff9\U52a8\U753b\U6301\U7eed\U65f6\U95f4";
     TipJar = "\U5c0f\U8d39\U7f50";
     TouchColor = "\U89e6\U6478\U989c\U8272";
     TouchSize = "\U89e6\U6478\U5c3a\U5bf8";

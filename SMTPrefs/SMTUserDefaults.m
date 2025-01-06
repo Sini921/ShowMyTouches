@@ -25,15 +25,16 @@ static NSString *const kDefaultsSuiteName = @"com.dvntm.showmytouches";
     NSData *borderColorData = [self dataWithColor:[UIColor grayColor]];
 
     [self registerDefaults:@{
-        @"enabled": @NO,
+        @"enable": @YES,
         @"Swipetrajectory": @NO,
         @"luminescence": @NO,
         @"touchColor": touchColorData,
         @"borderColor": borderColorData,
         @"duration": @0.0,
+        @"SwipetrajectoryDuration": @0.5,
         @"touchSize": @30,
         @"touchRadius": @15,
-        @"borderWidth": @3.0
+        @"borderWidth": @1.0
     }];
 }
 

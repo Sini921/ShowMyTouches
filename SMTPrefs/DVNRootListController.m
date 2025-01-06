@@ -13,6 +13,7 @@
     NSArray *_main;
     NSArray *_color;
     NSArray *_duration;
+    NSArray *_SwipetrajectoryDuration;
     NSArray *_size;
     NSArray *_radius;
     NSArray *_bwidth;
@@ -41,6 +42,10 @@
             @{@"type": @"slider", @"min": @0, @"max": @3, @"divider": @0.1, @"key": @"duration", @"id": @"durationCell", @"style": @(UITableViewCellStyleValue1)}
         ];
 
+        _SwipetrajectoryDuration = @[
+            @{@"type": @"slider", @"min": @0, @"max": @3, @"divider": @0.1, @"key": @"SwipetrajectoryDuration", @"id": @"SwipetrajectoryDurationCell", @"style": @(UITableViewCellStyleValue1)}
+        ];
+
         _size = @[
             @{@"type": @"slider", @"min": @20, @"max": @60, @"divider": @1, @"key": @"touchSize", @"id": @"touchSizeCell", @"style": @(UITableViewCellStyleValue1)}
         ];
@@ -66,7 +71,7 @@
             @{@"title": @"jbrepo", @"desc": @"Sini921", @"icon": @"jbrepo", @"type": @"link", @"key": @"https://sini921.github.io", @"id": @"devCell"}
         ];
 
-        _sections = @[_main, _color, _duration, _size, _radius, _bwidth, _reset, _developer];
+        _sections = @[_main, _color, _duration, _SwipetrajectoryDuration, _size, _radius, _bwidth, _reset, _developer];
     }
 
     return self;
@@ -112,6 +117,10 @@
     NSString *header;
     if (section == [_sections indexOfObject:_duration]) {
         header = @"AnimationDuration";
+    }
+
+    if (section == [_sections indexOfObject:_SwipetrajectoryDuration]) {
+        header = @"SwipetrajectoryDuration";
     }
 
     if (section == [_sections indexOfObject:_size]) {

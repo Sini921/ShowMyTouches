@@ -110,7 +110,8 @@ void ClearAllTouchViews() {
 
                         [touch.window addSubview:trailView];
 
-                        [UIView animateWithDuration:0.5 animations:^{
+                        CGFloat SwipetrajectoryDuration = [[SMTUserDefaults standardUserDefaults] floatForKey:@"SwipetrajectoryDuration"];
+                        [UIView animateWithDuration:SwipetrajectoryDuration animations:^{
                             trailView.alpha = 0.0;
                             trailView.transform = CGAffineTransformMakeScale(0.2, 0.2);
                         } completion:^(BOOL finished) {
