@@ -5,9 +5,21 @@
 
 @interface RPScreenRecorder : NSObject
 - (BOOL)isRecording;
-
 + (instancetype)sharedRecorder;
 @end
+
+NSMutableArray *globalTouchViews;
+
+void ClearAllTouchViews() {
+    for (UIView *touchView in globalTouchViews) {
+        [touchView removeFromSuperview];
+    }
+    [globalTouchViews removeAllObjects];
+}
+
+%ctor {
+    globalTouchViews = [NSMutableArray array];
+}
 
 %hook UIApplication
 - (void)sendEvent:(UIEvent *)event {
@@ -17,7 +29,9 @@
         return;
     }
 
-    if (smtBool(@"recording") && ![[%c(RPScreenRecorder) sharedRecorder] isRecording]) {
+    BOOL isRecording = [[%c(RPScreenRecorder) sharedRecorder] isRecording];
+    if (smtBool(@"recording") && !isRecording) {
+        ClearAllTouchViews();
         return;
     }
 
@@ -25,7 +39,6 @@
         NSSet *touches = [event allTouches];
         for (UITouch *touch in touches) {
             CGPoint touchPoint = [touch locationInView:nil];
-
             UIView *touchView = nil;
 
             if (touch.phase == UITouchPhaseBegan) {
@@ -58,6 +71,7 @@
 
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [touch.window addSubview:touchView];
+                        [globalTouchViews addObject:touchView];
                     });
 
                     objc_setAssociatedObject(touch, kTouchViewKey, touchView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -111,6 +125,7 @@
                 if (touchView) {
                     if (touch.tapCount > 1) {
                         [touchView removeFromSuperview];
+                        [globalTouchViews removeObject:touchView];
                     } else {
                         CGFloat duration = [[SMTUserDefaults standardUserDefaults] floatForKey:@"duration"];
                         [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -118,6 +133,7 @@
                             touchView.transform = CGAffineTransformMakeScale(1.5, 1.5);
                         } completion:^(BOOL finished) {
                             [touchView removeFromSuperview];
+                            [globalTouchViews removeObject:touchView];
                         }];
                     }
                     objc_setAssociatedObject(touch, kTouchViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
